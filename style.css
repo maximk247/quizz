@@ -1,0 +1,189 @@
+*,*::before,*::after {
+    box-sizing: border-box;
+    font-family: 'Belanosima', sans-serif;
+font-family: 'Cabin', sans-serif;
+font-family: 'Comfortaa', cursive;
+font-family: 'Kanit', sans-serif;
+    font-size: 1.4rem;
+    
+}
+
+:root {
+    --hue-neutral: 200;
+    --hue-wrong: 0;
+    --hue-correct: 145;
+}
+
+body {
+    --hue: var(--hue-neutral);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: hsl(var(--hue),  100%, 20%);
+    
+}
+
+body.correct {
+    --hue: var(--hue-correct);
+}
+
+body.wrong {
+    --hue: var(--hue-wrong);
+}
+
+.container {
+    width: 800px;
+    max-width: 80%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px 2px #cccccc;
+   
+      animation: anime 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+      /* animation-fill-mode: forwards; */
+
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    gap: 10px;
+    margin: 20px 0;
+    
+}
+
+.btn {
+    --hue: var(--hue-neutral);
+    border: 1px solid hsl(var(--hue), 100%, 30%);
+    background-color: hsl(var(--hue), 100%, 50%);
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    outline: none;
+    animation: animeForQuestions 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn:hover{
+    color: black;
+}
+
+.btn.correct {
+    --hue: var(--hue-correct);
+    color: black;
+}
+
+.btn.wrong {
+    --hue: var(--hue-wrong);
+}
+
+.start-btn, .next-btn {
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding: 10px 20px 10px 20px;
+    width: 250px;
+    animation: animeForControls 2.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    display: none;
+}
+
+.resultScore {
+    position: absolute;
+    top: 10%;
+    animation: appear 1.3s cubic-bezier(0.77, 0.33, 1, 0.72) 1;
+    width: 800px;
+    max-width: 80%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px 2px #cccccc;
+}
+
+
+
+@keyframes anime {
+    0% {
+      width: 100px;
+      background: #f0f0f0;
+      
+    }
+  
+    
+    100% {
+      width: 800px;
+      background: #fafafa;
+      
+    }}
+
+@keyframes animeForControls {
+        0% {
+          width: 60px;
+          font-size:x-small;
+          padding: 10px 20px 10px 20px;
+        }
+
+       
+      
+        100% {
+            width: 250px;
+            font-size: 1.4rem;
+            padding: 10px 20px 10px 20px;
+        }}
+
+@keyframes animeForQuestions {
+            0% {
+              width: 30%;
+              font-size:x-small;
+              
+            }
+            
+          
+            100% {
+                width: 100%;
+                font-size: 1.4rem;
+                
+            }}
+
+
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale3d(9, 1, 1) translateX(-10vw);
+  }
+  20% {
+    opacity: 0.3;
+    transform: scale3d(6, 1, 1) translateX(0);
+  }
+  40% {
+    opacity: 0.5;
+    transform: scale3d(1, 1, 1) translateX(0);
+  }
+  45% {
+    opacity: 1;
+    transform: scale3d(0.35, 1.8, 1);
+  }
+  75% {
+    transform: scale3d(0.35, 1.4, 1);
+  }
+  80% {
+    transform: scale3d(1.1, 1, 1);
+  }
+  85% {
+    transform: scale3d(1.4, 1, 1);
+  }
+
+  100% {
+  }
+}
